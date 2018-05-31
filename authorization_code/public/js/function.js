@@ -18,6 +18,8 @@
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
+    //var 
+
     var oauthSource = document.getElementById('oauth-template').innerHTML,
         oauthTemplate = Handlebars.compile(oauthSource),
         oauthPlaceholder = document.getElementById('oauth');
@@ -50,6 +52,11 @@
                     $('#loggedin').show();
                 }
             });
+
+            $.ajax({
+
+            });
+
         } else {
             // render initial screen
             $('#login').show();

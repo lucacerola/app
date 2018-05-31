@@ -43,7 +43,13 @@
       <h1>Welcome {{display_name}}</h1>
       <p>This is an app that provides you with the top played songs in a specified year.</p>
       <h3>Enter a year to start.</h3>
-      <input type="text/search" id="" name="" class="" placeholder="" autocomplete="off" aria-label="" value="">
+      <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Year" aria-label="Year" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+              <a href="" class="btn btn-success buttonSize fontLink">Search</a>
+          </div>
+      </div>
+    
     </script>
 
     <!-- <script id="artist-template" type="text/x-handlebars-template">

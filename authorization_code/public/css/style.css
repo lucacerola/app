@@ -11,3 +11,12 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
+
+.buttonSize {
+    height: 34px;
+    width: 75px;
+}
+
+.fontLink {
+    font-size: 15px;
+}
