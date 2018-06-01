@@ -18,7 +18,17 @@
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
-    //var 
+    var modalSource = document.getElementById('modal-template').innerHTML,
+        modalTemplate = Handlebars.compile(modalSource),
+        modalPlaceholder = document.getElementById('modal-modal');
+
+    var inputsSource = document.getElementById('inputs-template').innerHTML,
+        inputsTemplate = Handlebars.compile(inputsSource),
+        inputsPlaceholder = document.getElementById('inputs');
+
+    //var bandNameSource = document.getElementById('band-name-template').innerHTML,
+        //bandNameTemplate = Handlebars.compile(bandNameSource),
+        //bandNamePlaceholder = document.getElementById('band-name');
 
     var oauthSource = document.getElementById('oauth-template').innerHTML,
         oauthTemplate = Handlebars.compile(oauthSource),
@@ -42,6 +52,7 @@
 
             $.ajax({
                 url: 'https://api.spotify.com/v1/me',
+                method: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + access_token
                 },
@@ -54,8 +65,38 @@
             });
 
             $.ajax({
+                success: function (response) {
+                    inputsPlaceholder.innerHTML = inputsTemplate(response);
+                    $('#login').hide();
+                    $('#loggedin').show();
+                }
+            })
 
-            });
+            $(document).ready("#button").click(function () {
+            $.ajax({
+                url: 'https://api.spotify.com/v1/search?q=' + document.getElementById('user-input-1') + '&type=' + document.getElementById('user-input-2') + '%2C' + document.getElementById('user-input-3'),
+                headers: {
+                    'Authorization': 'Bearer ' + access_token
+                },
+                success: function (response) {
+                    modalPlaceholder.innerHTML = modalTemplate(response);
+                    $('#login').hide();
+                    $('#loggedin').show();
+                }
+                })
+                });
+            /*$.ajax({
+                url: 'https://api.spotify.com/v1/search',
+                headers: {
+                    'Authorization': 'Bearer ' + access_token
+                },
+                success: function (response) {
+                    bandNamePlaceholder.innerHTML = bandNameTemplate(response);
+                    // $("#get-artist-list").show();
+                    $('#login').hide();
+                    $('#loggedin').show();
+                }
+            });*/
 
         } else {
             // render initial screen
