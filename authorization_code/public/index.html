@@ -50,21 +50,19 @@
 
     <script id="inputs-template" type="text/x-handlebars-template">
         <div class="input-group mb-3">
-            <input id="user-input-1" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-        </div>
-        <div class="input-group mb-3">
-            <input id="user-input-2" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-        </div>
-        <div class="input-group mb-3">
-            <input id="user-input-3" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <input id="user-input-1" type="text" class="form-control" placeholder="Artist Name">
         </div>
         <button id="button">Search</button>
 </script>
 
-      <script id="modal-template" type="text/x-handlebars-template">              
+      <script id="modal-template" type="text/x-handlebars-template">    
               <dl class="dl-horizontal">
-                  <dt>Followers</dt>
-                  <dd>{{followers}}</dd>
+                  <dt>Items</dt>
+                  <dd>{{#each artists.items}}
+                    <div class="row">
+                        {{followers.total}}
+                    </div>
+                    {{/each}}</dd>
                   <dt>Genres</dt>
                   <dd>{{genres}}</dd>
                   <dt>Name</dt>
@@ -112,6 +110,8 @@
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="./js/function.js"></script>
       <script src="./js/thing.js"></script>
+
+
 
 
 </body>

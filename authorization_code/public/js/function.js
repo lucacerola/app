@@ -22,6 +22,8 @@
         modalTemplate = Handlebars.compile(modalSource),
         modalPlaceholder = document.getElementById('modal-modal');
 
+    //var artists = document.getElementById('user-input-1').innerHTML;
+
     var inputsSource = document.getElementById('inputs-template').innerHTML,
         inputsTemplate = Handlebars.compile(inputsSource),
         inputsPlaceholder = document.getElementById('inputs');
@@ -52,7 +54,7 @@
 
             $.ajax({
                 url: 'https://api.spotify.com/v1/me',
-                method: 'GET',
+                
                 headers: {
                     'Authorization': 'Bearer ' + access_token
                 },
@@ -73,8 +75,16 @@
             })
 
             $(document).ready("#button").click(function () {
+                var artists = document.getElementById('user-input-1').value;
             $.ajax({
-                url: 'https://api.spotify.com/v1/search?q=' + document.getElementById('user-input-1') + '&type=' + document.getElementById('user-input-2') + '%2C' + document.getElementById('user-input-3'),
+                url: 'https://api.spotify.com/v1/search',
+                method: 'GET',
+                dataType: 'json',
+                data: {
+                    q: artists,
+                    type: 'artist',
+                    limit: 1,
+                },
                 headers: {
                     'Authorization': 'Bearer ' + access_token
                 },
