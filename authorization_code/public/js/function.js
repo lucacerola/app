@@ -82,8 +82,8 @@
                 dataType: 'json',
                 data: {
                     q: artists,
-                    type: 'artist',
-                    limit: 1,
+                    type: 'playlist',
+                    limit: 5,
                 },
                 headers: {
                     'Authorization': 'Bearer ' + access_token

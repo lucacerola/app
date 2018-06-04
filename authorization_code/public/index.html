@@ -55,21 +55,19 @@
         <button id="button">Search</button>
 </script>
 
-      <script id="modal-template" type="text/x-handlebars-template">    
-              <dl class="dl-horizontal">
-                  <dt>Items</dt>
-                  <dd>{{#each artists.items}}
+    <script id="modal-template" type="text/x-handlebars-template">    
+       
+            <dl class="dl-horizontal">
+                <dt>Playlists:</dt>
+                <dd>
+                    {{#each playlists.items}}
                     <div class="row">
-                        {{followers.total}}
+                        <a href="{{external_urls.spotify}}">{{name}}</a> 
                     </div>
-                    {{/each}}</dd>
-                  <dt>Genres</dt>
-                  <dd>{{genres}}</dd>
-                  <dt>Name</dt>
-                  <dd>{{name}}</dd>
-                  <dt>Popularity</dt>
-                  <dd>{{popularity}}</dd>
-              </dl>
+                    {{/each}}
+                </dd>
+            </dl>
+    
           <!-- <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Year" aria-label="Year" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -91,7 +89,6 @@
                   </div>
               </div>
           </div> -->
-
       </script>
 
     <!-- <script id="artist-template" type="text/x-handlebars-template">
@@ -109,7 +106,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="./js/function.js"></script>
-      <script src="./js/thing.js"></script>
+        <script src="./js/thing.js"></script>
 
 
 
