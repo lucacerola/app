@@ -18,7 +18,7 @@
     </style>
   </head>
 
-  <body class="p-3 mb-2 blackColour text-white">
+  <body class="p-3 mb-2 blackColour text-white" background=""./fabian.hidalgo/Downloads/9cceedb85aa7fdbe60f3512da07ee5bf.jpg"">
     <div class="container">
       <div id="login">
         <h1>Log In To Access The Application</h1>
@@ -43,18 +43,27 @@
       </div>
     </div>
 
+      
+
     <script id="user-profile-template" type="text/x-handlebars-template">
       <h1>Welcome {{display_name}}</h1>
-      <p>This is an app that provides you with the top played songs in a specified year.</p>
+      <p>This is an app provides you with the top playlists.</p>
     </script>
 
     <script id="inputs-template" type="text/x-handlebars-template">
+        
         <div class="input-group mb-3">
-            <input id="user-input-1" type="text" class="form-control" placeholder="Artist Name">
-        </div>
-        <button id="button">Search</button>
-</script>
+            <input id="user-input-1" type="text" class="form-control" placeholder="Search...">
 
+            <div class="input-group-append">
+                <button class="btn btn-success" id="button-1">Search</button>
+
+            </div>
+        </div>
+        
+
+</script>
+     
     <script id="modal-template" type="text/x-handlebars-template">    
        
             <dl class="dl-horizontal">
@@ -67,6 +76,7 @@
                     {{/each}}
                 </dd>
             </dl>
+        
     
           <!-- <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Year" aria-label="Year" aria-describedby="basic-addon2">
@@ -106,11 +116,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="./js/function.js"></script>
-        <script src="./js/thing.js"></script>
-
-
-
-
+        
 </body>
 </html>
 

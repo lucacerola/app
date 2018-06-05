@@ -22,15 +22,9 @@
         modalTemplate = Handlebars.compile(modalSource),
         modalPlaceholder = document.getElementById('modal-modal');
 
-    //var artists = document.getElementById('user-input-1').innerHTML;
-
     var inputsSource = document.getElementById('inputs-template').innerHTML,
         inputsTemplate = Handlebars.compile(inputsSource),
         inputsPlaceholder = document.getElementById('inputs');
-
-    //var bandNameSource = document.getElementById('band-name-template').innerHTML,
-        //bandNameTemplate = Handlebars.compile(bandNameSource),
-        //bandNamePlaceholder = document.getElementById('band-name');
 
     var oauthSource = document.getElementById('oauth-template').innerHTML,
         oauthTemplate = Handlebars.compile(oauthSource),
@@ -60,7 +54,7 @@
                 },
                 success: function (response) {
                     userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-                   // $("#get-artist-list").show();
+
                     $('#login').hide();
                     $('#loggedin').show();
                 }
@@ -71,79 +65,42 @@
                     inputsPlaceholder.innerHTML = inputsTemplate(response);
                     $('#login').hide();
                     $('#loggedin').show();
+                    playlistSearch();
                 }
             })
 
-            $(document).ready("#button").click(function () {
-                var artists = document.getElementById('user-input-1').value;
-            $.ajax({
-                url: 'https://api.spotify.com/v1/search',
-                method: 'GET',
-                dataType: 'json',
-                data: {
-                    q: artists,
-                    type: 'playlist',
-                    limit: 5,
-                },
-                headers: {
-                    'Authorization': 'Bearer ' + access_token
-                },
-                success: function (response) {
-                    modalPlaceholder.innerHTML = modalTemplate(response);
-                    $('#login').hide();
-                    $('#loggedin').show();
-                }
-                })
+            function playlistSearch() {
+                $("#button-1").click(function () {
+                    var artists = document.getElementById('user-input-1').value;
+                    if (artists.length > 0) {
+                        $.ajax({
+                            url: 'https://api.spotify.com/v1/search',
+                            method: 'GET',
+                            dataType: 'json',
+                            data: {
+                                q: artists,
+                                type: 'playlist',
+                                limit: 5,
+                            },
+                            headers: {
+                                'Authorization': 'Bearer ' + access_token
+                            },
+                            success: function (response) {
+                                modalPlaceholder.innerHTML = modalTemplate(response);
+                                $('#login').hide();
+                                $('#loggedin').show();
+                            }
+                        })
+                    } else {
+                        alert("Please Enter a Word To Begin");
+                    }
                 });
-            /*$.ajax({
-                url: 'https://api.spotify.com/v1/search',
-                headers: {
-                    'Authorization': 'Bearer ' + access_token
-                },
-                success: function (response) {
-                    bandNamePlaceholder.innerHTML = bandNameTemplate(response);
-                    // $("#get-artist-list").show();
-                    $('#login').hide();
-                    $('#loggedin').show();
-                }
-            });*/
+            }
 
         } else {
-            // render initial screen
             $('#login').show();
             $('#loggedin').hide();
         }
-
-       /* document.getElementById('obtain-new-token').addEventListener('click', function () {
-            $.ajax({
-                url: '/refresh_token',
-                data: {
-                    'refresh_token': refresh_token
-                }
-            }).done(function (data) {
-                access_token = data.access_token;
-                oauthPlaceholder.innerHTML = oauthTemplate({
-                    access_token: access_token,
-                    refresh_token: refresh_token
-                });
-            });
-        }, false); */
-
-        /* $(".getArtist").click(function() {
-            var artistSource = document.getElementById('artist-template').innerHTML,
-                artistTemplate = Handlebars.compile(artistSource),
-                artistListPlaceholder = document.getElementById('artist-list');
-            $.ajax({
-                url: 'https://api.spotify.com/v1/artists/0OdUWJ0sBjDrqHygGUXeCF',
-                headers: {
-                    'Authorization': 'Bearer ' + access_token
-                },
-                success: function (response) {
-                    artistListPlaceholder.innerHTML = artistTemplate(response);
-                    console.log(response);
-                } 
-            });
-        }); */
     }
     
 })();
