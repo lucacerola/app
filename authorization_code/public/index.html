@@ -4,7 +4,7 @@
     <title>Spotify App</title>
     <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./css/styleog.css">-->
+    --><link rel="stylesheet" href="css/styleog.css">
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -28,16 +28,12 @@
     <link rel="stylesheet" href="css/custom.css">
   </head>
 
-  <body class="p-3 mb-2 blackColour text-white">
+  <body>
     <div class="container">
       <div id="login">
         <h1>Log In To Access The Application</h1>
         <a href="/login" class="btn btn-success">Log in with Spotify</a>
       </div>
-      <!-- <div id="get-artist-list">
-        <h1>Get Artist list</h1>
-        <a href="#" class="btn btn-primary getArtist">Get all</a>
-      </div> -->
       <div id="loggedin">
         <div id="user-profile">
         </div> 
@@ -47,68 +43,51 @@
         </div>
         <div id="oauth">
         </div>
-        <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
       </div>
     </div>
       <div class="probootstrap-loader"></div>
-     <!-- <header role="banner" class="probootstrap-header">
+    <header role="banner" class="probootstrap-header">
           <div class="container">
-              <a href="index.html" class="probootstrap-logo">Black<span>.</span></a>
-
+              <a href="index.html" class="probootstrap-logo">Spotify<span>.</span></a>
+              <!--<img src="img/splogo.png" alt="Spotify Logo" class="img-responsive logo-size">-->
               <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
               <div class="mobile-menu-overlay"></div>
               <nav role="navigation" class="probootstrap-nav hidden-xs">
-                  <ul class="probootstrap-main-nav">
+                  <!--<ul class="probootstrap-main-nav">
                       <li><a href="index.html">Home</a></li>
                       <li><a href="projects.html">Projects</a></li>
                       <li><a href="services.html">Services</a></li>
                       <li><a href="about.html">About</a></li>
                       <li><a href="contact.html">Contact</a></li>
-                  </ul>
-                  <ul class="probootstrap-right-nav hidden-xs">
+                  </ul>-->
+                  <ul class="probootstrap-right-nav hidden-xs fixedElement">                     
                       <li><a href="#"><i class="icon-twitter"></i></a></li>
                       <li><a href="#"><i class="icon-facebook2"></i></a></li>
                       <li><a href="#"><i class="icon-instagram2"></i></a></li>
                   </ul>
-                  <div class="extra-text visible-xs">
-                      <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
-                      <h5>Address</h5>
-                      <p>198 West 21th Street, Suite 721 New York NY 10016</p>
-                      <h5>Connect</h5>
-                      <ul class="social-buttons">
-                          <li><a href="#"><i class="icon-twitter"></i></a></li>
-                          <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                          <li><a href="#"><i class="icon-instagram2"></i></a></li>
-                      </ul>
-                  </div>
               </nav>
           </div>
-      </header> -->
+      </header> 
       <section class="page-title">
           <div class="container">
-              <!-- <div class="row">
-              <div class="col-md-12 section-heading"> -->
               <h1>Welcome</h1>
-              <!-- </div>
-            </div> -->
           </div>
       </section>
       <section class="probootstrap-section">
           <div class="container">
               <div class="row">
                   <div class="col-md-9">
-                      <p><img src="img/slider_1.jpg" alt="Free HTML5 Bootstrap Template by uicookies.com" class="img-responsive img-border"></p>
-                      <h2>Far far away</h2>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                      <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                      <h3>Even the all-powerful...</h3>
-                      <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                      <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-                      <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+                      
+                      <h2>How It Works</h2>
+                      <p>The page utilizes your input and sends a search parameter to the Spotify database, Spotify will return every playlist that matches that parameter.</p>
+                      <h3>Why do we need you to authenticate?</h3>
+                      <p>That's because of two reasons:</p>
+                      <p>First, in order to access the Spotify database in its entirety without any sorts of restrictions you need to have the user authenticate and grant permission, then you can acces said data through the users credential.</p>
+                      <p>Second, for you to be able to access a playlist that was to your liking without having to search it up in Spotify, you can just click the link and it will open it in your account.</p>                     
                       <p><a href="https://uicookies.com/" target="_blank" role="button" class="btn btn-primary btn-sm">Visit Website</a></p>
 
                   </div>
-                  <div class="col-md-3">
+                  <!--<div class="col-md-3">
 
 
                       <div class="panel-group probootstrap-panel" id="accordion" role="tablist" aria-multiselectable="true">
@@ -157,20 +136,20 @@
                               </div>
                           </div>
                       </div>
-                      <!-- END panel-group -->
-                  </div>
+                    
+                  </div> -->
               </div>
           </div>
       </section>
 
 
-      <div class="container">
+     <!-- <div class="container">
           <div class="probootstrap-cta probootstrap-animate">
               <h2 class="mb20">Create a beautiful templates to benefits many.</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
               <p><a href="#" role="button" class="btn btn-primary">Get started</a></p>
           </div>
-      </div>
+      </div> -->
       <!-- END section cta -->
       <section class="probootstrap-section">
           <div class="container">
@@ -214,6 +193,32 @@
                           <div class="probootstrap-card-text">
                               <h2 class="probootstrap-card-heading mb0">Black Person</h2>
                               <p class="category">Photography</p>
+                              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                              <p><a href="#">View details</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row-md-4 probootstrap-animate">
+                      <div class="probootstrap-card">
+                          <div class="probootstrap-card-media">
+                              <a href="#"><img src="img/slider_2.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+                          </div>
+                          <div class="probootstrap-card-text">
+                              <h2 class="probootstrap-card-heading mb0">Sleek Spaker</h2>
+                              <p class="category">Design</p>
+                              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                              <p><a href="#">View details</a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row-md-4 probootstrap-animate">
+                      <div class="probootstrap-card">
+                          <div class="probootstrap-card-media">
+                              <a href="#"><img src="img/slider_2.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+                          </div>
+                          <div class="probootstrap-card-text">
+                              <h2 class="probootstrap-card-heading mb0">Sleek Spaker</h2>
+                              <p class="category">Design</p>
                               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                               <p><a href="#">View details</a></p>
                           </div>
