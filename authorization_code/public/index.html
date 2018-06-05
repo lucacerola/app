@@ -4,7 +4,7 @@
     <title>Spotify App</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/styleog.css">
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -16,9 +16,19 @@
         width: 500px;
       }
     </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>uiCookies:Black &mdash; Free Bootstrap Theme, Free Responsive Bootstrap Website Template</title>
+      <meta name="description" content="Free Bootstrap Theme by uicookies.com">
+      <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+      <link rel="stylesheet" href="css/styles-merged.css">
+      <link rel="stylesheet" href="css/style.min.css">
+      <link rel="stylesheet" href="css/custom.css">
   </head>
 
-  <body class="p-3 mb-2 blackColour text-white" background=""./fabian.hidalgo/Downloads/9cceedb85aa7fdbe60f3512da07ee5bf.jpg"">
+  <body class="p-3 mb-2 blackColour text-white">
     <div class="container">
       <div id="login">
         <h1>Log In To Access The Application</h1>
@@ -46,8 +56,40 @@
       
 
     <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Welcome {{display_name}}</h1>
-      <p>This is an app provides you with the top playlists.</p>
+        <div class="probootstrap-loader"></div>
+        <header role="banner" class="probootstrap-header">
+            <div class="container">
+                <a href="index.html" class="probootstrap-logo">Black<span>.</span></a>
+
+                <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
+                <div class="mobile-menu-overlay"></div>
+                <nav role="navigation" class="probootstrap-nav hidden-xs">
+                    <ul class="probootstrap-main-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul class="probootstrap-right-nav hidden-xs">
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook2"></i></a></li>
+                        <li><a href="#"><i class="icon-instagram2"></i></a></li>
+                    </ul>
+                    <div class="extra-text visible-xs">
+                        <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
+                        <h5>Address</h5>
+                        <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+                        <h5>Connect</h5>
+                        <ul class="social-buttons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook2"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram2"></i></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
     </script>
 
     <script id="inputs-template" type="text/x-handlebars-template">
