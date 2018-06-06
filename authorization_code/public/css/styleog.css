@@ -3,7 +3,19 @@
     width: 20px;
 }
 
-text-black {
-    background-color: darkslategrey;
-    color: black;
+.text-black {
+    background-color: #372e2e;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 75%;
+    border: thin;
+    font-weight: bold;
+    font-family: Tahoma;
 }
+
+.image-size {
+    height: 500px;
+    width: 500px;
+}
+

@@ -26,6 +26,10 @@
         inputsTemplate = Handlebars.compile(inputsSource),
         inputsPlaceholder = document.getElementById('inputs');
 
+    var teamSource = document.getElementById('team-template').innerHTML,
+        teamTemplate = Handlebars.compile(teamSource),
+        teamPlaceholder = document.getElementById('team');
+
     var oauthSource = document.getElementById('oauth-template').innerHTML,
         oauthTemplate = Handlebars.compile(oauthSource),
         oauthPlaceholder = document.getElementById('oauth');
@@ -68,6 +72,19 @@
                     playlistSearch();
                 }
             })
+
+            $.ajax({
+                /*url: 'https://api.spotify.com/v1/me',
+
+                headers: {
+                    'Authorization': 'Bearer ' + access_token
+                },*/
+                success: function (response) {
+                    teamPlaceholder.innerHTML = teamTemplate(response);
+                    $('#login').hide();
+                    $('#loggedin').show();
+                }
+            });
 
             function playlistSearch() {
                 $("#button-1").click(function () {
