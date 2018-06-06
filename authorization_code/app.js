@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = 'de8656198d97439481f0bc1e45cce033'; // Your client id
 var client_secret = '332c06dc8ef94b19a12fd7899d0a448e'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var redirect_uri = 'https://web-api-auth-examples.now.sh/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -61,7 +61,6 @@ app.get('/callback', function(req, res) {
 
   // your application requests refresh and access tokens
   // after checking the state parameter
-  //console.log("hola");
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
