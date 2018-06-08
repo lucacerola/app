@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
   <head>
     <title>Spotify App</title>
@@ -10,8 +10,6 @@
       <link rel="stylesheet" href="css/styles-merged.css">
       <link rel="stylesheet" href="css/style.min.css">
       <link rel="stylesheet" href="css/custom.css">
-    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">-->
     <style type="text/css">
       #login, #loggedin {
         display: none;
@@ -25,11 +23,11 @@
     </style>
   </head>
 
-  <body>
-    <div class="container">
-      <div id="login">
-        <h1>Log In To Access The Application</h1>
-        <a href="/login" class="btn btn-success">Log in with Spotify</a>
+  <body style="background-image: url(img/dio.jpg); background-repeat: no-repeat; background-size: cover; background-position: center">
+
+      <div id="login" style="text-align: center; vertical-align: central; background-image: url(img/mashic.png); background-size: cover; background-position: center; padding-bottom: 410px">
+        <h1 class="page-title"  style="text-align: center; font-size: xx-large; background-color: rgba(0, 0, 0, 0.5); padding-bottom: 10px; padding-top: 10px">Please Log In To Access The Application</h1>
+        <a href="/login" class="btn btn-subscribe" style="font-size: large; background-color: rgba(0, 0, 0, 0.5); padding-bottom: 10px; padding-top: 10px">Log in with Spotify</a>
       </div>
       <div id="loggedin" >
         <div id="user-profile">
@@ -44,32 +42,21 @@
         </div>
         <!-- <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button> -->
       </div>
-    </div>
-      <div class="probootstrap-loader"></div>
-      
 
+      <div class="probootstrap-loader"></div>
 
       <script id="user-profile-template" type="text/x-handlebars-template">
 
-          <div style="    background-image: url(img/slider2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    ">
-              <header role="banner" class="probootstrap-header">
+          <div style="background-image: url(http://img.technews.tw/wp-content/uploads/2018/04/18203924/2018-04-18_203913.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+              <header role="banner" class="probootstrap-header" style="background-color: rgba(0, 0, 0, 0.5)">
                   <div class="container">
-                      <a href="index.html" class="probootstrap-logo">Spotify<span>.</span></a>
-                      <!--<img src="img/splogo.png" alt="Spotify Logo" class="img-responsive logo-size">-->
+                      <a href="index.html" class="probootstrap-logo">SPOTIFY<span>.</span></a>
+
                       <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
                       <div class="mobile-menu-overlay"></div>
+
                       <nav role="navigation" class="probootstrap-nav hidden-xs">
-                          <!--<ul class="probootstrap-main-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>-->
+
                           <ul class="probootstrap-right-nav hidden-xs fixedElement">
                               <li><a href="#"><i class="icon-twitter"></i></a></li>
                               <li><a href="#"><i class="icon-facebook2"></i></a></li>
@@ -78,7 +65,7 @@
                       </nav>
                   </div>
               </header>
-
+             
               <section class="probootstrap-slider">
                   <ul class="slides">
                       <li>
@@ -104,7 +91,7 @@
             <img src="img/slider2.jpg">
               </div>-->
               <div class="container">
-                  <h1>Welcome {{diplay_name}}</h1>
+                  <h1>Welcome {{id}}</h1>
               </div>
           </section>
           <section class="probootstrap-section">
@@ -145,32 +132,54 @@
      
     <script id="modal-template" type="text/x-handlebars-template">         
         <section class="probootstrap-section">
-            <dl>
-                <dt style="font-size: x-large">The Playlists</dt>
-                <dd>
-                    {{#each playlists.items}}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 section-heading">
+                        <h2 style="font-weight: bold">The Playlists</h2>
+                    </div>
+                </div>
+                </div>
+                <dl>
+                    <dt></dt>
+                    <dd>
+                        {{#each playlists.items}}
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="row-md-4">
-                                <div class="probootstrap-card">
-                                    <div class="probootstrap-card-media">
-                                        <a href="{{external_urls.spotify}}"><img src="{{images.0.url}}" class="img-responsive img-border" alt="Playlist Image"></a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="row-md-4">
+                                    <div class="probootstrap-card probootstrap-person">
+                                        <div class="probootstrap-card-media">
+                                            <a id="main" href="{{external_urls.spotify}}"><img src="{{images.0.url}}" class="img-responsive" alt="Playlist Image" style="border-radius: 0px; float: left; clear: right; margin-left: 60px; margin-right: 50px; margin-bottom: 25px; height:200px; width: 200px;"></a>
+                                        </div>
+                                        <!--<div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <div class="slides-text probootstrap-animate fadeInUp probootstrap-animated">
+                                                <div style="background-color:rgba(0, 0, 0, 0.5);">
+                                                    <h2 class="probootstrap-card-heading" style="font-weight: bold">{{name}}</h2>
+                                                </div>
+                                                    <p><a href="{{external_urls.spotify}}" class="btn btn-primary" style="font-size: xx-large">Play</a></p>
+                                                </div>
+                                        </div>
                                     </div>
-                                    <div class="probootstrap-card-text">
-                                        <h2 class="probootstrap-card-heading mb0">{{name}}</h2>
-                                        <p class="category">{{owner.id}}</p>
-                                        <p><a href="{{external_urls.spotify}}">Play With Spotify</a></p>
+                                </div>-->
+                                     
+                                        <div class="probootstrap-card-text text-center">
+                                            <h2 class="probootstrap-card-heading mb0" style="font-weight: bold; font-size: x-large">{{name}}</h2>
+                                            <p class="category" style="font-weight: bolder; font-size: large">{{owner.id}}</p>
+                                            <p><a href="{{external_urls.spotify}}" class="btn btn-subscribe" style="font-weight: bold; font-size: x-large">Play With Spotify</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {{/each}}
-                </dd>
-            </dl>
-        </section>
+
+
+                        {{/each}}
+                    </dd>
+                </dl>
+</section>
       </script>
 
       <script id="team-template" type="text/x-handlebars-template">
@@ -178,21 +187,21 @@
               <div class="container">
                   <div class="row">
                       <div class="col-md-12 section-heading">
-                          <h2>The Team</h2>
+                          <h2 style="font-weight: bold">The Team</h2>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-md-4">
                           <div class="probootstrap-card probootstrap-person text-center">
                               <div class="probootstrap-card-media">
-                                  <img src="img/fabi.jpeg" class="img-responsive">
+                                  <img src="img/fabi2.jpeg" class="img-responsive">
                               </div>
                               <div class="probootstrap-card-text">
                                   <h2 class="probootstrap-card-heading mb0">Nicolas Fabian Hidalgo</h2>
                                   <p><small>Crative Director & Chief of Unicorn Division</small></p>
                                   <ul class="probootstrap-social">
                                       <li><a href="#"><i class="icon-facebook2"></i></a></li>
-                                      <li><a href="https://www.reddit.com/nick07242000"><i class="icon-reddit"></i></a></li>
+                                      <li><a href="https://www.reddit.com/user/nick07242000"><i class="icon-reddit"></i></a></li>
                                       <li><a href="https://www.instagram.com/nicolas.hidalgo.51"><i class="icon-instagram2"></i></a></li>
                                   </ul>
                               </div>
@@ -205,11 +214,11 @@
                               </div>
                               <div class="probootstrap-card-text">
                                   <h2 class="probootstrap-card-heading mb0">Maria Brisa Vargas</h2>
-                                  <p><small>Master in Destruction of Expensive Machinery</small></p>
+                                  <p><small>Phd in Destruction of Expensive Machinery</small></p>
                                   <ul class="probootstrap-social">
                                       <li><a href="https://twitter.com/brivargass"><i class="icon-twitter"></i></a></li>
                                       <li><a href="#"><i class="icon-github"></i></a></li>
-                                      <li><a href="https://www.reddit.com/brivargas"><i class="icon-reddit"></i></a></li>
+                                      <li><a href="https://www.reddit.com/user/brivargas"><i class="icon-reddit"></i></a></li>
                                       <li><a href="https://www.instagram.com/brivargas4"><i class="icon-instagram2"></i></a></li>
                                   </ul>
                               </div>

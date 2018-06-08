@@ -51,14 +51,12 @@
             });
 
             $.ajax({
-                url: 'https://api.spotify.com/v1/me',
-                
+                url: 'https://api.spotify.com/v1/me',     
                 headers: {
                     'Authorization': 'Bearer ' + access_token
                 },
                 success: function (response) {
                     userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-
                     $('#login').hide();
                     $('#loggedin').show();
                 }
@@ -74,11 +72,6 @@
             })
 
             $.ajax({
-                /*url: 'https://api.spotify.com/v1/me',
-
-                headers: {
-                    'Authorization': 'Bearer ' + access_token
-                },*/
                 success: function (response) {
                     teamPlaceholder.innerHTML = teamTemplate(response);
                     $('#login').hide();
